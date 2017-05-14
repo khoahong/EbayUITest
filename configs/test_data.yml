@@ -1,0 +1,3 @@
+platform_name: Android
+app_package: com.ebay.mobile
+default_page_wait: 15
