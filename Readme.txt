@@ -11,7 +11,8 @@ How to run tests:
 3. Run: bundle install
 4. Run: appium
 5. Open Emulator
-4. Run: cucumber --tags @search.search_with_guest_user APP_PATH=./apk/com.ebay.mobile_5.9.0.apk DEVICE_NAME="192.168.56.101:5555" APPIUM_PORT=4723
+6. Run: adb devices to get list of devices, mine is "192.168.56.101:5555"
+7. Run: cucumber --tags @search.search_with_guest_user APP_PATH=./apk/com.ebay.mobile_5.9.0.apk DEVICE_NAME="192.168.56.101:5555" APPIUM_PORT=4723
 
 TODO:
 1. Generate test report
