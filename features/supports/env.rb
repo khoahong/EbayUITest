@@ -19,10 +19,6 @@ DEFAULT_PAGE_WAIT = TEST_DATA['default_page_wait']
 World(PageObject::PageFactory)
 desired_caps = OperatingSystem.new(DEVICE_NAME, APP_PATH, APPIUM_PORT).desired_caps
 AppiumHelper.init_environment(desired_caps)
-AppiumHelper.start_driver(DEFAULT_PAGE_WAIT)
-
-require PROJECT_DIR + '/libs/helpers/action_helper.rb'
-require_all PROJECT_DIR + '/libs/pages/'
 
 at_exit do
   driver_quit

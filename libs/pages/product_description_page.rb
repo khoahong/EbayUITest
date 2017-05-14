@@ -12,6 +12,8 @@ class ProductDescriptionPage
   def watch_product
     wait_until { item_price_element.visible? }
     ActionHelper.swipe_from_middle_to_top
+    #Wait here for a while since Appium is flaky after swiping
+    sleep 1
     self.watch
   end
 end
