@@ -9,6 +9,8 @@ module AppiumHelper
       Appium::Driver.new(@desired_caps).start_driver
       Appium.promote_appium_methods Object
       PageObject.default_page_wait = default_page_wait
+      Appium.set_wait(default_page_wait)
+      PageObject.default_element_wait = default_page_wait
     end
   end
 end
