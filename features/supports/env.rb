@@ -1,11 +1,14 @@
 require 'appium_lib'
 require 'page-object'
 require 'require_all'
+require 'faker'
 
 PROJECT_DIR = File.expand_path(File.dirname(__FILE__) + '../../..')
 TEST_DATA = YAML.load_file(PROJECT_DIR + '/configs/test_data.yml')
 
-require_all PROJECT_DIR + '/libs/helpers/'
+require PROJECT_DIR + '/libs/helpers/appium_helper.rb'
+require PROJECT_DIR + '/libs/helpers/page_object_helper.rb'
+require PROJECT_DIR + '/libs/helpers/command_line_helper.rb'
 require_all PROJECT_DIR + '/libs/models/'
 
 APP_PATH = ENV['APP_PATH']
@@ -17,3 +20,10 @@ World(PageObject::PageFactory)
 desired_caps = OperatingSystem.new(DEVICE_NAME, APP_PATH, APPIUM_PORT).desired_caps
 AppiumHelper.init_environment(desired_caps)
 AppiumHelper.start_driver(DEFAULT_PAGE_WAIT)
+
+require PROJECT_DIR + '/libs/helpers/action_helper.rb'
+require_all PROJECT_DIR + '/libs/pages/'
+
+at_exit do
+  driver_quit
+end

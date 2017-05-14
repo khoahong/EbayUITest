@@ -1,3 +1,4 @@
 platform_name: Android
 app_package: com.ebay.mobile
-default_page_wait: 15
+default_page_wait: 30
+maximum_scroll: 100

@@ -63,6 +63,7 @@ PLATFORMS
 DEPENDENCIES
   appium_lib (= 9.4.3)
   cucumber (= 2.4.0)
+  faker (= 1.6.6)
   page-object (= 1.2.2)
   require_all (= 1.3.3)
 
